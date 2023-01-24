@@ -17,7 +17,7 @@ const BlogPage = () => {
 
 	return (
 		<>
-			<Navbar isInPostPage={true} />
+			<Navbar isInPostPage />
 
 			<section className="space-y-4 mt-20">
 				<h1 className="text-white text-4xl font-extrabold mb-8">

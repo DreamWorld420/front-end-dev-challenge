@@ -1,15 +1,16 @@
 import Image from "next/image";
+import profile from "/public/images/profile1.jpg";
 
 const BlogAuthor = () => {
 	return (
-		<section className="w-full flex justify-start mt-8">
+		<section className="w-full flex justify-start mt-12">
 			<section className="flex space-x-8">
-				<section className="rounded">
+				<section className="rounded-full w-14 h-14 relative">
 					<Image
-						src="/public/images/profile1.jpg"
+						src={profile}
 						alt="author profile"
-						width={32}
-						height={32}
+						fill
+						className="rounded-full object-cover"
 					/>
 				</section>
 				<section>
