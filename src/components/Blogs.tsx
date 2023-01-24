@@ -4,7 +4,7 @@ import BlogItem from "./BlogItem";
 import React from "react";
 
 const Blogs = () => {
-	const [blogs, isLoading, isError] = useBlog("/posts");
+	const [blogs, isLoading, isError] = useBlog();
 
 	if (isLoading) {
 		return <p>loading...</p>;

@@ -1,21 +1,16 @@
 import axiosInstance from "@/axiosInstance";
 import { useState, useEffect } from "react";
 
-type BlogList = {
-	id: Number;
-	userId: Number;
-	title: String;
-	body: String;
-}[];
-
-const useBlog = () => {
+const useBlogPost = (query?: any) => {
 	const [isLoading, setIsLoading] = useState<Boolean>(true);
 	const [data, setData] = useState<any>([]);
 	const [isError, setIsError] = useState<Boolean>(false);
 
 	useEffect(() => {
+		if (!query) return;
+
 		axiosInstance
-			.get("/posts")
+			.get(`/posts/${query}`)
 			.then((res) => {
 				setIsLoading(false);
 				setData(res.data);
@@ -23,9 +18,9 @@ const useBlog = () => {
 			.catch((err) => {
 				setIsError(true);
 			});
-	}, []);
+	}, [query]);
 
 	return [data, isLoading, isError];
 };
 
-export default useBlog;
+export default useBlogPost;
