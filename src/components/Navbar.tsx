@@ -20,7 +20,12 @@ const Navbar = () => {
 	return (
 		<nav className="flex justify-between mt-8">
 			<h1 className="font-extrabold text-4xl">Overreacted</h1>
-			<button onClick={() => dispatcher(toggleMode())}>toggle</button>
+			<button
+				onClick={() => dispatcher(toggleMode())}
+				className="border rounded-full w-8 h-8 dark:border-white border-black font-mono"
+			>
+				{mode === "dark" ? "1" : "0"}
+			</button>
 		</nav>
 	);
 };
