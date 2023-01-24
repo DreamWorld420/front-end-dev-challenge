@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 const Homepage = () => {
 	return (
 		<section>
+			<Navbar />
+			<BlogAuthor />
 			<Blogs />
 			<Footer />
 		</section>

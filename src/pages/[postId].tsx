@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import useBlogPost from "@/hooks/useBlogPost";
 import { useRouter } from "next/router";
 
@@ -15,10 +16,17 @@ const BlogPage = () => {
 	}
 
 	return (
-		<section className="mt-16 space-y-4">
-			<h1 className="text-pink text-2xl font-extrabold">{data.title}</h1>
-			<p>{data.body}</p>
-		</section>
+		<>
+			<Navbar isInPostPage={true} />
+
+			<section className="space-y-4 mt-20">
+				<h1 className="text-white text-4xl font-extrabold mb-8">
+					{data.title}
+				</h1>
+				<p>{new Date().toDateString()}</p>
+				<p>{data.body}</p>
+			</section>
+		</>
 	);
 };
 
